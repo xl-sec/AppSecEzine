@@ -47,6 +47,7 @@ jobs:
           echo "Generating: " $latest
           python RSSGenerator/rssgenerator.py "Ezines/$latest" rss > output/latest.rss
           python RSSGenerator/rssgenerator.py "Ezines/$latest" atom > output/latest.atom
+          python RSSGenerator/rssgenerator2.py "Ezines/$latest"
       - name: Generate index.htm from readme
         uses: maxheld83/pandoc@v2
         with:

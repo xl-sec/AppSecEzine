@@ -61,6 +61,7 @@ jobs:
         echo "Generating: " $latest
         python RSSGenerator/rssgenerator.py "Ezines/$latest" rss > output/latest.rss
         python RSSGenerator/rssgenerator.py "Ezines/$latest" atom > output/latest.atom
+        python RSSGenerator/rssgenerator2.py "Ezines/$latest"
 
     - name: Generate index.htm from readme
       if: steps.sync.outputs.has_new_commits == 'true'
