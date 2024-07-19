@@ -170,7 +170,8 @@ def generate_feed_whole(ezine, mode):
     fe.title(ezine.title())
     fe.published(ezine.date)
     # fe.content(ezine.raw.replace("  ", "&nbsp;&nbsp;").replace("\n", "<br>\n"), type="html")
-    fe.content(ezine.raw, type="CDATA")
+    fe.content("<pre>" + ezine.raw + "</pre>", type="html")
+    # fe.content(ezine.raw, type="CDATA")
     fe.id(ezine.url)
     fe.link(href=ezine.url)
 
