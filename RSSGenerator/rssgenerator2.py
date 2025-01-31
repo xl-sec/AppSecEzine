@@ -59,7 +59,7 @@ def parse_ezine(path):
     result = Ezine()
     current_category = None
     current_item = EzineItem()
-    extra_url_regexp = re.compile("([\w \-]+): (https?://[\w\./?&]+) ?")
+    extra_url_regexp = re.compile(r"([\w \-]+): (https?://[\w\./?&]+) ?")
 
     repo = git.Repo(".")
     date = next(repo.iter_commits(paths=path, max_count=1)).committed_datetime

@@ -51,7 +51,7 @@ def parse_ezine(path, mode = None):
     result = Ezine()
     current_category = None
     current_item = EzineItem()
-    extra_url_regexp = re.compile("([\w \-]+): (https?://[\w\./?&]+) ?")
+    extra_url_regexp = re.compile(r"([\w \-]+): (https?://[\w\./?&]+) ?")
     with open(path, 'r') as fp:
         for row in fp:
             row = row.strip()
